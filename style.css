@@ -1,29 +1,99 @@
+/* Thème clair par défaut */
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+    color: #000;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+    background-color: #2b2b2b;
+    color: #f5f5f5;
 }
 
 .container {
-    max-width: 400px;
-    margin: 50px auto;
     background: white;
-    padding: 20px;
+    padding: 20px 30px;
     border-radius: 10px;
+    width: 400px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark .container {
+    background: #3c3c3c;
+}
+
+h1 {
+    text-align: center;
+}
+
+.theme-toggle {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.input-section {
+    display: flex;
+    margin-bottom: 15px;
 }
 
 input {
-    width: 70%;
+    flex: 1;
     padding: 10px;
-    margin-right: 5px;
+    font-size: 16px;
 }
 
 button {
-    padding: 10px;
+    padding: 10px 15px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark button {
+    background-color: #555;
+    color: #f5f5f5;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
 }
 
 li {
-    text-align: left;
-    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+li:hover {
+    transform: scale(1.02);
+}
+
+li span {
+    flex: 1;
+    margin-left: 10px;
+}
+
+li.completed span {
+    text-decoration: line-through;
+    color: gray;
+}
+
+body.dark li.completed span {
+    color: #bbb;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
 }
