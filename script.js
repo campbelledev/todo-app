@@ -7,6 +7,12 @@ addBtn.addEventListener('click', () => {
     if(taskText !== "") {
         const li = document.createElement('li');
         li.textContent = taskText;
+
+        // Ajouter la fonctionnalité pour supprimer au clic
+        li.addEventListener('click', () => {
+            li.remove();
+        });
+
         taskList.appendChild(li);
         taskInput.value = "";
     }
